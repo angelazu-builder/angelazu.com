@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angela Zu | Builder, Researcher & Quant</title>
+  <meta name="description" content="Personal portfolio and proof of work of Angela Zu — Oxford Laidlaw Scholar, AI Systems Builder, and Quantitative Researcher.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            space: {
+              950: '#060709',
+              900: '#0c0d12',
+              800: '#14161f',
+              700: '#1f2230',
+            },
+            accent: {
+              violet: '#8b5cf6',
+              cyan: '#06b6d4',
+              emerald: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #060709;
+      color: #e2e8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      background: rgba(18, 20, 29, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(139, 92, 246, 0.15);
+    }
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, rgba(6, 7, 9, 0) 70%);
+    }
+    .dragon-tail {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 0;
+      animation: dash 6s ease-in-out infinite alternate;
+    }
+    @keyframes dash {
+      from { stroke-dashoffset: 400; }
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-300 antialiased selection:bg-purple-500/30 selection:text-purple-200">
+  <div class="fixed inset-0 glow-bg pointer-events-none z-0"></div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/5 bg-space-950/70">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <!-- Hand-drawn Symbol: Yin-Yang to Ascending Dragon -->
+        <div class="w-9 h-9 rounded-lg bg-space-800 border border-white/10 flex items-center justify-center group-hover:border-purple-500/50 transition">
+          <svg viewBox="0 0 100 100" class="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition" fill="none" stroke="currentColor">
+            <!-- Yin-Yang dual lobes -->
+            <path d="M50 20 C35 20 30 35 45 45 C60 55 55 75 40 75 C25 75 25 55 25 50" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="38" cy="34" r="3" fill="currentColor"/>
+            <!-- Ascending dragon tail with subtle dynamic sweep -->
+            <path class="dragon-tail" d="M48 68 C65 72 80 60 76 40 C72 22 88 15 92 12" stroke-width="3.5" stroke="url(#dragon-grad)" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="dragon-grad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="font-bold text-white tracking-tight">Angela Zu</span>
+      </a>
+
+      <nav class="flex items-center gap-6 text-sm font-medium">
+        <a href="#work" class="text-slate-400 hover:text-white transition">Proof of Work</a>
+        <a href="#journey" class="text-slate-400 hover:text-white transition">Journey</a>
+        <a href="#writing" class="text-slate-400 hover:text-white transition">Writing</a>
+        <a href="#wall" class="text-slate-400 hover:text-white transition">Banter & Wall</a>
+        <a href="https://github.com/angelazu-builder" target="_blank" class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:border-purple-400/40 text-xs text-white font-mono flex items-center gap-2 transition">
+          <span>GitHub</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-5xl mx-auto px-6 py-16 space-y-28">
+
+    <!-- HERO SECTION -->
+    <section class="space-y-8 pt-6">
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-space-800/80 border border-white/10 text-xs font-mono text-purple-300">
+        <span class="flex h-2 w-2 rounded-full bg-purple-400"></span>
+        <span>University of Oxford (Laidlaw Scholar) · N1 AI Scholar</span>
+      </div>
+
+      <div class="space-y-4 max-w-3xl">
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          I build inspectable AI systems & quantitative event engines.
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-400 font-normal leading-relaxed">
+          Driven by high agency, empirical rigor, and ruthless execution. 
+          I investigate transformer mechanics, build mispricing trading pipelines, and craft verifiable autonomous environments.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#work" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition shadow-lg shadow-purple-600/25 flex items-center gap-2">
+          <span>Explore Proof of Work</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a href="https://github.com/angelazu-builder" target="_blank" class="px-6 py-3 rounded-xl bg-space-800 border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>github.com/angelazu-builder</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROOF OF WORK / FLAGSHIP SYSTEMS -->
+    <section id="work" class="space-y-8">
+      <div class="flex items-end justify-between border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400">Section 01</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Proof of Work: Flagship Systems</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-500">Zero fluff · Fully reproducible</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Flagship 1: nanoGPT Dynamics -->
+        <div class="glass-card rounded-2xl p-7 space-y-5 md:col-span-2">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🧠</span>
+              <div>
+                <h3 class="text-xl font-bold text-white">Context-Length Order & LLM Training Dynamics</h3>
+                <p class="text-xs font-mono text-purple-300">Empirical Research · PyTorch MPS on Apple Silicon · Preregistered Study</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-300">+0.7570 → -0.0485 BPC</span>
+            </div>
+          </div>
+
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Investigated whether temporal curricula of context lengths leave path-dependent deficits or are artifacts of recency bias. 
+            Engineered a modular <strong>4.8M-parameter character-level Transformer</strong>. 
+            Formulated a 3-iteration controlled empirical study culminating in a formal preregistered recovery protocol holding token budgets (4,096 tokens/step) and AdamW trajectories invariant. 
+            Disproved persistent path dependence: recovery exposure rapidly restores capability.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 border-t border-white/5 text-xs font-mono">
+            <a href="https://github.com/angelazu-builder/nanoGPT" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center gap-1">
+              <span>View Repository</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="https://github.com/angelazu-builder/nanoGPT/blob/main/training_dynamics_research/recovery_study/TECHNICAL_REPORT_CONCISE_final.pdf" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-1">
+              <span>Technical Report (PDF)</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Flagship 2: Event-Driven Trading -->
+        <div class="glass-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">📈</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Event-Driven Equity Mispricing Engine</h3>
+              <p class="text-xs font-mono text-cyan-400">Interactive Brokers API · SEC EDGAR · Streamlit</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Captures structural underreactions to corporate catalyst events by quantifying the 
+            <strong>Fundamental Revision vs Price Reaction (FR - PR) Gap</strong>. 
+            Automated IBKR order routing protected by strict portfolio risk limiters (12.5% single-stock cap, 50% gross cap, spread &lt;1.5%).
+          </p>
+          <div class="pt-2 border-t border-white/5 text-xs font-mono">
+            <a href="https://github.com/angelazu-builder/event-driven-trading" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+              <span>Architecture & Code</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Flagship 3: Agent Invariant Verification -->
+        <div class="glass-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🤖</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Autonomous Agent Verification Environment</h3>
+              <p class="text-xs font-mono text-emerald-400">AST Import Parsers · Invariant Baselines · Safe Migrate</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Eliminates LLM hallucination of code refactorings. 
+            Built a 6-domain invariant checker validating AST imports, link fidelity, and package entry points, coupled with an atomic git migration harness featuring instant rollback on failure.
+          </p>
+          <div class="pt-2 border-t border-white/5 text-xs font-mono">
+            <a href="https://github.com/angelazu-builder/repo-organizer-skill" target="_blank" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>Skill Spec & Scripts</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE JOURNEY / INFLECTION POINTS -->
+    <section id="journey" class="space-y-8">
+      <div class="flex items-end justify-between border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400">Section 02</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Journey: Non-Consensus Inflections</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-500">Choices over credentials</span>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Inflection 1 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-start">
+          <div class="font-mono text-xs text-purple-400 md:w-36 shrink-0 pt-1">
+            2026 · Oxford & Beyond
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold text-white">Refusing the "Prompt Engineering" Comfort Zone</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              When everyone was chaining API prompts and building thin wrappers, I decided to go down to the bare metal: building an inspectable 4.8M-parameter character-level Transformer on Apple Silicon to empirically map out context-length deficits. Real builders understand the gradient mechanics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Inflection 2 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-start">
+          <div class="font-mono text-xs text-purple-400 md:w-36 shrink-0 pt-1">
+            2025 · Laidlaw Research
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold text-white">Linking 3,096 Messy Entities Across 7 Public APIs</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Faced with fragmented UK regulatory registers, I engineered an entity-resolution pipeline matching companies and charities using postcode-blocked Jaccard n-grams (&ge;85% threshold) and compared LLM extraction capabilities against missing-data econometrics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Inflection 3 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col md:flex-row gap-6 items-start">
+          <div class="font-mono text-xs text-purple-400 md:w-36 shrink-0 pt-1">
+            Present · The Next Chapter
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold text-white">Building for the a16z September 2027 Founding Class</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Why a16z? Because software is eating the physical world next, and I want to be surrounded by builders who treat high agency as a baseline, not a buzzword.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING / CONSISTENT WORK -->
+    <section id="writing" class="space-y-8">
+      <div class="flex items-end justify-between border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400">Section 03</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Consistently Writing (The Mind)</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-500">Writing is leverage</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <span class="text-xs font-mono text-purple-400">Technical Report</span>
+          <h4 class="text-sm font-bold text-white">Why Context Recency Trumps Path Dependence</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">How a 5-paired-seed recovery phase overturned a +0.7570 BPC gap and what it implies for LLM curriculum design.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <span class="text-xs font-mono text-cyan-400">Trading Thesis</span>
+          <h4 class="text-sm font-bold text-white">The Structural FR vs PR Gap in Earnings Revisions</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Why algorithmic sentiment traders lose money on earnings calls while multi-day fundamental updates leave persistent alpha.</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <span class="text-xs font-mono text-emerald-400">Agent Architecture</span>
+          <h4 class="text-sm font-bold text-white">Why Coding Agents Need AST Invariant Baselines</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Treating repository migrations as database transactions: atomic dry runs, rollback triggers, and verifiable claims.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE WALL / BANTER -->
+    <section id="wall" class="space-y-8">
+      <div class="flex items-end justify-between border-b border-white/5 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-purple-400">Section 04</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Interactive Wall & Banter</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-500">Unfiltered endorsements</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-bold text-white">Lab Collaborator</span>
+            <span class="text-xs text-purple-400">⚡ High Velocity</span>
+          </div>
+          <p class="text-xs text-slate-300 italic">"Angela doesn't sleep until the loss curve either drops or we figure out why the seed diverged. Utterly relentless."</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-bold text-white">Quant Teammate</span>
+            <span class="text-xs text-cyan-400">🎯 Zero Hallucinations</span>
+          </div>
+          <p class="text-xs text-slate-300 italic">"The only person in the hackathon who refused to use a mock API and actually connected Interactive Brokers paper routing."</p>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-bold text-white">Peer Reviewer</span>
+            <span class="text-xs text-emerald-400">🧪 Pure Rigor</span>
+          </div>
+          <p class="text-xs text-slate-300 italic">"Asked for 1 seed trial, she came back with a 5-paired-seed preregistered recovery protocol. Overdelivering is standard."</p>
+        </div>
+      </div>
+
+      <!-- Interactive Stamp Box -->
+      <div class="glass-card rounded-2xl p-6 text-center space-y-4 border-dashed border-white/10">
+        <p class="text-sm text-slate-300">Are you reviewing for a16z Academy? Leave a quick interactive nod:</p>
+        <div class="flex justify-center gap-3">
+          <button onclick="stampReaction('🔥 Built Different')" class="px-4 py-2 rounded-lg bg-space-800 hover:bg-space-700 border border-white/10 text-xs font-mono text-purple-300 transition active:scale-95">🔥 Built Different</button>
+          <button onclick="stampReaction('⚡ High Agency')" class="px-4 py-2 rounded-lg bg-space-800 hover:bg-space-700 border border-white/10 text-xs font-mono text-cyan-300 transition active:scale-95">⚡ High Agency</button>
+          <button onclick="stampReaction('🤝 Let\'s Back Her')" class="px-4 py-2 rounded-lg bg-space-800 hover:bg-space-700 border border-white/10 text-xs font-mono text-emerald-300 transition active:scale-95">🤝 Let's Back Her</button>
+        </div>
+        <div id="reaction-notice" class="text-xs font-mono text-purple-400 h-4"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="pt-12 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div class="flex items-center gap-2">
+        <span>© 2026 Angela Zu</span>
+        <span>·</span>
+        <span class="text-slate-400">angelazu.com</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:angela.qazoo@gmail.com" class="hover:text-purple-400 transition">angela.qazoo@gmail.com</a>
+        <a href="https://github.com/angelazu-builder" target="_blank" class="hover:text-purple-400 transition">github.com/angelazu-builder</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    function stampReaction(text) {
+      const notice = document.getElementById('reaction-notice');
+      notice.innerText = `Stamped: "${text}" — Thank you!`;
+      setTimeout(() => { notice.innerText = ''; }, 3000);
+    }
+  </script>
+</body>
+</html>
